@@ -1,0 +1,10 @@
+version: "3.4"
+
+services:
+  live66-grab-rtsp-stream:
+    image: live666:latest
+    build:
+      context: .
+    volumes:
+      - ./output/:/opt/output/
+    command: ["-4", "-v", "-t", "-P", "9", "-d", "20", "-B", "20000000", "-b", "20000000", "-F", "/opt/output/video", "rtsp://stream-url"]
